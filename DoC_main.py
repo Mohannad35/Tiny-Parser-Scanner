@@ -134,7 +134,7 @@ class MainApp(QMainWindow, Ui_MainWindow):
         labels = dict((n, d['value']) for n, d in graph.nodes(data=True))
         # #e0e1e3 #19232d #455364
         plt.rcParams['axes.facecolor'] = '#19232d'
-        f = plt.figure("Syntax tree", figsize=(10, 8), layout='constrained')
+        f = plt.figure("Syntax tree", figsize=(10, 7), layout='constrained')
         for shape in ['s', 'o']:
             nx.draw_networkx_nodes(graph, pos, node_color='#455364', node_size=2200, node_shape=shape,
                                    nodelist=[sNode[0] for sNode in
@@ -142,7 +142,7 @@ class MainApp(QMainWindow, Ui_MainWindow):
         nx.draw_networkx_edges(graph, pos, arrows=True, arrowsize=38, edge_color='#e0e1e3')
         nx.draw_networkx_labels(graph, pos, labels=labels, font_size=14, font_color='#e0e1e3',
                                 font_family='Arial Rounded MT Bold')
-        f.canvas.manager.window.wm_geometry("+%d+%d" % (600, 100))
+        f.canvas.manager.window.wm_geometry("+%d+%d" % (600, 10))
         plt.show()
 
 
